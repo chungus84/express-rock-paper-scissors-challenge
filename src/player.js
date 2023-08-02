@@ -9,6 +9,7 @@ class Player {
     getMove() { return this.move; }
 
     setMove(move) { this.move = move; }
+
 }
 
 export default Player;

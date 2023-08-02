@@ -8,13 +8,15 @@ describe('Player Test', () => {
         expect(testPlayer).instanceOf(Player);
 
 
-    })
+    });
+
     it('name of player should equal Test', () => {
         const testPlayerName = `Test`
         const testPlayer = new Player(testPlayerName);
         expect(testPlayer.getName()).equal(testPlayerName);
 
     });
+
     it('should be able to select a handMove using function setMove', () => {
 
         const mockHandMove = Object.freeze({
