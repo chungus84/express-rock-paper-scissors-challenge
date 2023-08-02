@@ -14,5 +14,18 @@ describe('Player Test', () => {
         const testPlayer = new Player(testPlayerName);
         expect(testPlayer.getName()).equal(testPlayerName);
 
+    });
+    it('should be able to select a handMove using function setMove', () => {
+
+        const mockHandMove = Object.freeze({
+            Rock: 'rock',
+
+        });
+        const testPlayerName = `Test`
+        const testPlayer = new Player(testPlayerName);
+        testPlayer.setMove(mockHandMove.Rock);
+
+        expect(testPlayer.getMove()).equal(mockHandMove.Rock);
+
     })
 })
