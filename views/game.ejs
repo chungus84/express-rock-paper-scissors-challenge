@@ -6,7 +6,24 @@
             <h1>Hi, <%= name.name %>
             </h1>
             <h1>Select Rock Paper or Scissors</h1>
+            <form action="/results" method="post">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" value="rock" name="radiobtn" id="btnrock" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnrock">Rock</label>
 
+                    <input type="radio" class="btn-check" name="radiobtn" value="paper" id="btnpaper"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnpaper">Paper</label>
+
+                    <input type="radio" class="btn-check" name="radiobtn" value="scissors" id="btnscissors"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnscissors">Scissors</label>
+                </div>
+                </div>
+
+                <input type="submit" value="Submit" id="move-submit">
+
+            </form>
 
 
             <%- include('partials/footer.ejs') %>

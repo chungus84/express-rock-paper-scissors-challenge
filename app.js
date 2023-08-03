@@ -6,6 +6,7 @@ import Computer from './src/computer.js';
 import { indexRouter } from './routes/index.js';
 import { singlePlayerRouter } from './routes/singleplayer.js';
 import { gameRouter } from './routes/game.js';
+import { resultsRouter } from './routes/results.js';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
@@ -26,6 +27,7 @@ app.use(bodyParser.json())
 app.use('/', indexRouter);
 app.use('/singleplayer', singlePlayerRouter);
 app.use('/game', gameRouter);
+app.use('/results', resultsRouter);
 
 
 const server = app.listen(4000, () => {
