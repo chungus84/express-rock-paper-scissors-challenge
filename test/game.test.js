@@ -4,15 +4,11 @@ import { expect } from 'chai';
 describe('Game Tests', () => {
     it('determineWinner should determine who won between two players', () => {
         const mockPlayer = {
-            name: "TestPlayer",
-            move: "scissors",
             getMove() { return "scissors" },
             getName() { return "TestPlayer" }
         }
 
         const mockComputer = {
-            name: "Computer",
-            move: "paper",
             getMove() { return "paper" },
             getName() { return "Computer" }
         }
