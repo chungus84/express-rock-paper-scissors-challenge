@@ -21,6 +21,7 @@ class Game {
         if (Game.resultsHash[this.player2.getMove()].includes(this.player1.getMove())) {
             return `${this.player2.name ? this.player2.getName() : "Computer"} wins, ${this.player2.getMove()} beats ${this.player1.getMove()}`;
         }
+        return "Draw";
 
     }
 

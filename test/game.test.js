@@ -23,7 +23,7 @@ describe('Game Tests', () => {
         expect(result).to.equal(`TestPlayer wins, scissors beats paper`);
 
     });
-    it('should determin player2 (computer) wins this game', () => {
+    it('should determine player2 (computer) wins this game', () => {
         // Arrange
         const mockPlayer = {
             getMove() { return "rock" },
@@ -45,6 +45,25 @@ describe('Game Tests', () => {
 
         //Assert
         expect(result).to.equal(`Computer wins, paper beats rock`);
-    })
+    });
 
+    it('should determine the result to be a draw', () => {
+        // Arrange
+        const mockPlayer = {
+            getMove() { return "rock" },
+            getName() { return "TestPlayer" }
+        }
+
+        const mockComputer = {
+            getMove() { return "rock" },
+            getName() { return "Computer" }
+        }
+        const testGame = new Game(mockPlayer, mockComputer);
+
+        // Act
+        const result = testGame.determineWinner();
+
+        //Assert
+        expect(result).to.equal(`Draw`);
+    })
 })
