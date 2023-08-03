@@ -29,6 +29,19 @@ I would like to register my name before playing an online game
 As a DFAT member
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
+
+As a DFAT member
+So I can play rock/paper/scissors
+I would like to be able to select my move
+
+As a DFAT member
+So I can play rock/paper/scissors
+The computer will select at random, their move
+
+As a DFAT member
+So I can play rock/paper/scissors
+the winner will be determine by comparing my move to the computer's
+
 ```
 
 Hints on functionality

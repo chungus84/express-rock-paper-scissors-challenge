@@ -1,18 +1,18 @@
 import { expect } from "chai";
-import Player from '../src/player.js'
+import HumanPlayer from '../src/humanPlayer.js'
 
 describe('Player Test', () => {
     it('should create an instance of player', () => {
         const testPlayerName = `Test`
-        const testPlayer = new Player(testPlayerName);
-        expect(testPlayer).instanceOf(Player);
+        const testPlayer = new HumanPlayer(testPlayerName);
+        expect(testPlayer).instanceOf(HumanPlayer);
 
 
     });
 
     it('name of player should equal Test', () => {
         const testPlayerName = `Test`
-        const testPlayer = new Player(testPlayerName);
+        const testPlayer = new HumanPlayer(testPlayerName);
         expect(testPlayer.getName()).equal(testPlayerName);
 
     });
@@ -24,7 +24,7 @@ describe('Player Test', () => {
 
         });
         const testPlayerName = `Test`
-        const testPlayer = new Player(testPlayerName);
+        const testPlayer = new HumanPlayer(testPlayerName);
         testPlayer.setMove(mockHandMove.Rock);
 
         expect(testPlayer.getMove()).equal(mockHandMove.Rock);

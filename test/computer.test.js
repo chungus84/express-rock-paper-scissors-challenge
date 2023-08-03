@@ -6,12 +6,13 @@ describe('Computer player Test', () => {
         const computer = new Computer();
         expect(computer).instanceOf(Computer);
     });
-    it('setMove should set the computers move using random', () => {
-        const mockHandMove = Object.freeze({
-            Rock: 'rock',
-            Paper: 'paper'
 
-        });
+    it('setMove should set the computers move using random', () => {
+        const mockHandMove = {
+            rock: 'rock',
+            paper: 'paper'
+
+        };
         const computer = new Computer();
         computer.setMove(mockHandMove);
 
