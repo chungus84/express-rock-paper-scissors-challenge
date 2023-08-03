@@ -26,21 +26,45 @@ As a DFAT member
 So that I can see my name
 I would like to register my name before playing an online game
 
+| Object                             | Properties   | Messages  | Returns |
+| ---------------------------------- | ------------ | --------- | ------- |
+| humanPlayer (inherits from player) | name @String | getName() | @String |
+
+
 As a DFAT member
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
+So that I can see my name
+I would like a computer instance to be created to play against
+
+| Object                          | Properties   | Messages  | Returns |
+| ------------------------------- | ------------ | --------- | ------- |
+| Computer (inherits from player) | name @String | getName() | @String |
+
 
 As a DFAT member
 So I can play rock/paper/scissors
 I would like to be able to select my move
 
+| Object                             | Properties   | Messages              | Returns |
+| ---------------------------------- | ------------ | --------------------- | ------- |
+| humanPlayer (inherits from player) | move @String | getMove()             | @String |
+|                                    |              | setMove(move @String) | @void   |
+
 As a DFAT member
 So I can play rock/paper/scissors
 The computer will select at random, their move
 
+| Object                          | Properties   | Messages               | Returns |
+| ------------------------------- | ------------ | ---------------------- | ------- |
+| Computer (inherits from player) | move @String | getMove()              | @String |
+|                                 |              | setMove(move @ object) | @void   |
+
 As a DFAT member
 So I can play rock/paper/scissors
 the winner will be determine by comparing my move to the computer's
+
+| Object | Properties | Messages                          | Returns |
+| ------ | ---------- | --------------------------------- | ------- |
+| Game   |            | determineWinner(player1, player2) | @String |
 
 ```
 
