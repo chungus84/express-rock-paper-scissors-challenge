@@ -12,6 +12,7 @@ router.post('/', (req, res) => {
 
     console.log(game)
     // console.log(player1);
+    game.player1.setMove(req.body.radiobtn)
     if (game.player2.name != "Computer") { game.player2.setMove(req.body.radiobtn2) }
     console.log(game)
     // console.log(player1.getMove());
