@@ -10,6 +10,7 @@ import { resultsRouter } from './routes/results.js';
 import { multiplayerRouter } from './routes/multiplayer.js';
 import { multiplayerGame1 } from './routes/multiplayergame1.js';
 import { multiplayerGame2 } from './routes/multiplayergame2.js';
+import { multiPlayerResultsRouter } from './routes/multiplayerresults.js';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
@@ -34,6 +35,7 @@ app.use('/game', gameRouter);
 app.use('/results', resultsRouter);
 app.use('/multiplayergame1', multiplayerGame1)
 app.use('/multiplayergame2', multiplayerGame2)
+app.use('/multiplayerresults', multiPlayerResultsRouter)
 
 
 const server = app.listen(4000, () => {
