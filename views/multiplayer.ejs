@@ -1,0 +1,14 @@
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <%- include('partials/header.ejs') %>
+            <p>Please enter your names</p>
+            <form action="/multiplayergame1" method="post">
+                <p>Player 1 Name: <input id="player-1-name-textbox" type="text" name="player1"></p>
+                <p>Player 2 Name: <input type="text" id="player-2-name-textbox" name="player2"></p>
+                <input type="submit" value="Submit" id="name-submit">
+            </form>
+
+
+            <%- include('partials/footer.ejs') %>
+                <%- include('partials/end.ejs') %>

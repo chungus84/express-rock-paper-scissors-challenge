@@ -3,10 +3,10 @@
     <body>
         <%- include('partials/header.ejs') %>
 
-            <h1>Hi, <%= player1.name %>
+            <h1>Hi, <%= game.player1.name %>
             </h1>
             <h1>Select Rock Paper or Scissors</h1>
-            <form action="/results" method="post">
+            <form action="/multiplayergame2" method="post">
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                     <input type="radio" class="btn-check" value="rock" name="radiobtn" id="btnrock" autocomplete="off">
                     <label class="btn btn-outline-primary" for="btnrock">Rock</label>

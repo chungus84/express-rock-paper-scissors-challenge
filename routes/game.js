@@ -9,17 +9,19 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
     // console.log(req.body);
+    console.log(req.body);
     const player = new HumanPlayer(req.body.player1)
-    const computer = new Computer("Computer")
-    computer.setMove(handMove);
-    console.log(computer.getMove());
-    const currentGame = new Game(player, computer);
+    const player2 = req.body.player2 ? new HumanPlayer(req.body.player2) : new Computer("Computer");
+    if (player2 instanceof Computer) { player2.setMove(handMove) }
+    // console.log(player2.getMove());
+    const currentGame = new Game(player, player2);
 
     req.app.locals.game = currentGame;
     // console.log(req.app.locals.game);
 
 
     res.redirect('/game');
+
 });
 
 
@@ -28,7 +30,8 @@ router.get('/', (req, res) => {
     // console.log(player.player1);
 
     res.render('game', {
-        name: player.player1,
+        player1: player.player1,
+        player2: player.player2
 
     })
 })
