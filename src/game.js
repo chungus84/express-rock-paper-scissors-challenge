@@ -1,6 +1,7 @@
 class Game {
-    #player1
-    #player2
+    #player1;
+    #player2;
+    #singlePlayer;
 
     constructor(player1, player2) {
         this.player1 = player1;
@@ -12,6 +13,14 @@ class Game {
         "scissors": ["paper", "lizard"],
         "spock": ["rock", "scissors"],
         "lizard": ["paper", "spock"],
+    }
+
+    getSinglePlayer() {
+        return this.singlePlayer;
+    }
+
+    setSinglePLayer(playerMode) {
+        playerMode === 'single' ? this.singlePlayer = true : this.singlePlayer = false;
     }
 
 

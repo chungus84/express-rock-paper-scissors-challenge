@@ -17,6 +17,41 @@ describe('Game Tests', () => {
         const testGame = new Game(mockPlayer, mockComputer);
         //Assert
         expect(testGame).be.instanceOf(Game);
+    });
+    it('should set game singlePlayer variable to be true', () => {
+        const mockPlayer = {
+            getMove() { return "scissors" },
+            getName() { return "TestPlayer" }
+        }
+
+        const mockComputer = {
+            getMove() { return "paper" },
+            getName() { return "Computer" }
+        }
+        const testGame = new Game(mockPlayer, mockComputer)
+
+        // Act
+        testGame.setSinglePLayer('single');
+
+        expect(testGame.getSinglePlayer()).to.true
+    })
+
+    it('should set game singlePlayer variable to be false', () => {
+        const mockPlayer = {
+            getMove() { return "scissors" },
+            getName() { return "TestPlayer" }
+        }
+
+        const mockComputer = {
+            getMove() { return "paper" },
+            getName() { return "Computer" }
+        }
+        const testGame = new Game(mockPlayer, mockComputer)
+
+        // Act
+        testGame.setSinglePLayer('multi');
+
+        expect(testGame.getSinglePlayer()).to.false
     })
     it('determineWinner should determine who won between two players', () => {
         // Arrange
