@@ -37,6 +37,7 @@ describe('Game Tests', () => {
     })
 
     it('should set game singlePlayer variable to be false', () => {
+        // Arrange
         const mockPlayer = {
             getMove() { return "scissors" },
             getName() { return "TestPlayer" }
@@ -50,8 +51,52 @@ describe('Game Tests', () => {
 
         // Act
         testGame.setSinglePLayer('multi');
-
+        // Assert
         expect(testGame.getSinglePlayer()).to.false
+    });
+
+    it('should set the hardMode (incl. spock and lizard) to true', () => {
+        // Arrange
+        const mockPlayer = {
+            getMove() { return "scissors" },
+            getName() { return "TestPlayer" }
+        }
+
+        const mockComputer = {
+            getMove() { return "paper" },
+            getName() { return "Computer" }
+        }
+
+        const testGame = new Game(mockPlayer, mockComputer)
+        // Act
+        testGame.setHardMode('hard');
+
+        //Assert
+        expect(testGame.getHardMode()).to.true;
+
+
+    })
+
+    it('should set the hardMode (incl. spock and lizard) to false', () => {
+        // Arrange
+        const mockPlayer = {
+            getMove() { return "scissors" },
+            getName() { return "TestPlayer" }
+        }
+
+        const mockComputer = {
+            getMove() { return "paper" },
+            getName() { return "Computer" }
+        }
+
+        const testGame = new Game(mockPlayer, mockComputer)
+        // Act
+        testGame.setHardMode('standard');
+
+        //Assert
+        expect(testGame.getHardMode()).to.false;
+
+
     })
     it('determineWinner should determine who won between two players', () => {
         // Arrange

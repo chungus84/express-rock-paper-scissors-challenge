@@ -2,6 +2,8 @@ class Game {
     #player1;
     #player2;
     #singlePlayer;
+    #hardMode
+
 
     constructor(player1, player2) {
         this.player1 = player1;
@@ -15,12 +17,21 @@ class Game {
         "lizard": ["paper", "spock"],
     }
 
+
     getSinglePlayer() {
         return this.singlePlayer;
     }
 
     setSinglePLayer(playerMode) {
         playerMode === 'single' ? this.singlePlayer = true : this.singlePlayer = false;
+    }
+
+    getHardMode() {
+        return this.hardMode;
+    }
+
+    setHardMode(gameMode) {
+        gameMode === 'hard' ? this.hardMode = true : this.hardMode = false;
     }
 
 
