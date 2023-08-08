@@ -14,7 +14,8 @@ describe('Game Tests', () => {
             getName() { return "Computer" }
         }
         //Act
-        const testGame = new Game(mockPlayer, mockComputer);
+        const testGame = new Game();
+        testGame.setPlayers(mockPlayer, mockComputer);
         //Assert
         expect(testGame).be.instanceOf(Game);
     });
@@ -28,8 +29,8 @@ describe('Game Tests', () => {
             getMove() { return "paper" },
             getName() { return "Computer" }
         }
-        const testGame = new Game(mockPlayer, mockComputer)
-
+        const testGame = new Game();
+        testGame.setPlayers(mockPlayer, mockComputer);
         // Act
         testGame.setSinglePLayer('single');
 
@@ -47,7 +48,8 @@ describe('Game Tests', () => {
             getMove() { return "paper" },
             getName() { return "Computer" }
         }
-        const testGame = new Game(mockPlayer, mockComputer)
+        const testGame = new Game()
+        testGame.setPlayers(mockPlayer, mockComputer);
 
         // Act
         testGame.setSinglePLayer('multi');
@@ -67,7 +69,8 @@ describe('Game Tests', () => {
             getName() { return "Computer" }
         }
 
-        const testGame = new Game(mockPlayer, mockComputer)
+        const testGame = new Game();
+        testGame.setPlayers(mockPlayer, mockComputer);
         // Act
         testGame.setHardMode('hard');
 
@@ -89,8 +92,10 @@ describe('Game Tests', () => {
             getName() { return "Computer" }
         }
 
-        const testGame = new Game(mockPlayer, mockComputer)
+        const testGame = new Game();
+
         // Act
+        testGame.setPlayers(mockPlayer, mockComputer)
         testGame.setHardMode('standard');
 
         //Assert
@@ -110,9 +115,10 @@ describe('Game Tests', () => {
             getName() { return "Computer" }
         }
 
-        const testGame = new Game(mockPlayer, mockComputer);
+        const testGame = new Game();
 
         // Act
+        testGame.setPlayers(mockPlayer, mockComputer)
         const result = testGame.determineWinner();
 
         // Assert
@@ -134,9 +140,10 @@ describe('Game Tests', () => {
         // console.log(mockPlayer.getMove());
         // console.log(mockComputer.getMove());
 
-        const testGame = new Game(mockPlayer, mockComputer);
+        const testGame = new Game();
 
         // Act
+        testGame.setPlayers(mockPlayer, mockComputer)
         const result = testGame.determineWinner();
 
         //Assert
@@ -154,9 +161,10 @@ describe('Game Tests', () => {
             getMove() { return "rock" },
             getName() { return "Computer" }
         }
-        const testGame = new Game(mockPlayer, mockComputer);
+        const testGame = new Game();
 
         // Act
+        testGame.setPlayers(mockPlayer, mockComputer)
         const result = testGame.determineWinner();
 
         //Assert
@@ -173,9 +181,10 @@ describe('Game Tests', () => {
             getMove() { return "spock" },
             getName() { return "Computer" }
         }
-        const testGame = new Game(mockPlayer, mockComputer);
+        const testGame = new Game();
 
         // Act
+        testGame.setPlayers(mockPlayer, mockComputer)
         const result = testGame.determineWinner();
 
         //Assert

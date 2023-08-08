@@ -11,13 +11,6 @@ describe('Testing request on the server', () => {
 
 
     describe('POST request from singleplayer', () => {
-        it('should test singleplayer route', async () => {
-            const res = await testServer
-                .get('/singleplayer')
-
-            console.log(res.body);
-            expect(res).to.have.status(200);
-        })
 
         it('should send a players name to game', async () => {
             const testName = "Test Name";

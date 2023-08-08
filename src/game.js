@@ -4,17 +4,17 @@ class Game {
     #singlePlayer;
     #hardMode
 
-
-    constructor(player1, player2) {
-        this.player1 = player1;
-        this.player2 = player2;
-    }
     static resultsHash = {
         "rock": ["scissors", "lizard"],
         "paper": ["rock", "spock"],
         "scissors": ["paper", "lizard"],
         "spock": ["rock", "scissors"],
         "lizard": ["paper", "spock"],
+    }
+
+    setPlayers(player1, player2) {
+        this.player1 = player1;
+        this.player2 = player2
     }
 
 

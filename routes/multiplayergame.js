@@ -9,10 +9,8 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
 
-    const player1 = new HumanPlayer(req.body.player1)
-
-    const player2 = new HumanPlayer(req.body.player2)
-    const currentGame = new Game(player1, player2);
+    const currentGame = req.app.locals.game;
+    currentGame.player1.setMove(req.body.radiobtn);
     req.app.locals.game = currentGame
     // req.app.locals.player1 = player1;
     // req.app.locals.player2 = player2
@@ -20,7 +18,7 @@ router.post('/', (req, res) => {
 
 
 
-    res.redirect('multiplayergame1');
+    res.redirect('multiplayergame');
 
 });
 
@@ -32,10 +30,10 @@ router.get('/', (req, res) => {
     // console.log(player2);
     console.log(currentGame);
 
-    res.render('multiplayergame1', {
+    res.render('multiplayergame', {
         game: currentGame,
 
     })
 })
 
-export { router as multiplayerGame1 }
+export { router as multiplayerGame }

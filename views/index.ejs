@@ -4,9 +4,49 @@
         <%- include('partials/header.ejs') %>
 
             <p>Please select what mode you want to play</p>
-            <a href="/singleplayer" id="single-player-link">Single Player</a>
-            <a href="/multiplayer" id="multiplayer-link">Multiplayer</a>
+            <form action="/game" method="post">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" value="single" name="playerModeBtn" id="btnsingle"
+                        autocomplete="off" onclick="enableDisableCheckBox()">
+                    <label class="btn btn-outline-primary" for="btnsingle">Single Player</label>
+
+                    <input type="radio" class="btn-check" name="playerModeBtn" value="multi" id="btnmulti"
+                        autocomplete="off" onclick="enableDisableCheckBox()">
+                    <label class="btn btn-outline-primary" for="btnmulti">MultiPlayer</label>
+
+
+                </div>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" value="standard" name="gameModeBtn" id="btnstandard"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnstandard">Rock Paper Scissors</label>
+
+                    <input type="radio" class="btn-check" name="gameModeBtn" value="hard" id="btnhard"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnhard">Hard (incl. Spock & Lizard)</label>
+
+                </div>
+                <label for="player-1-name-textbox">Player 1 Name:
+                    <input type="text" name="player1" id="player-1-name-textbox">
+                </label>
+                <label for="player-2-name-textbox">Player 1 Name:
+                    <input type="text" name="player2" id="player-2-name-textbox" disabled>
+                </label>
+
+                <input type="submit" value="Submit" id="move-submit">
+            </form>
+            <!-- <a href="/singleplayer" id="single-player-link">Single Player</a>
+            <a href="/multiplayer" id="multiplayer-link">Multiplayer</a> -->
 
 
             <%- include('partials/footer.ejs') %>
+                <script>
+                    const enableDisableCheckBox = () => {
+                        let checkYes = document.querySelector('#btnmulti');
+                        let player2NameField = document.querySelector('#player-2-name-textbox');
+                        checkYes.checked ? player2NameField.disabled = false : player2NameField.disabled = true;
+
+
+                    }
+                </script>
                 <%- include('partials/end.ejs') %>
