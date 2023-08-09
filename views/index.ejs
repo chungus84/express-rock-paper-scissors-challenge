@@ -2,39 +2,61 @@
 
     <body>
         <%- include('partials/header.ejs') %>
+            <div class="container-fluid text-center align-middle center">
+                <h2 class=" mb-3">Please select what mode you want to play</h2>
 
-            <p>Please select what mode you want to play</p>
-            <form action="/game" method="post">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" value="single" name="playerModeBtn" id="btnsingle"
-                        autocomplete="off" onclick="enableDisableCheckBox()">
-                    <label class="btn btn-outline-primary" for="btnsingle">Single Player</label>
+                <form action="/game" method="post">
+                    <div class="row">
+                        <div class="btn-toolbar my-2 justify-content-evenly" role="toolbar"
+                            aria-label="Player mode group">
+                            <input type="radio" class="btn-check " value="single" name="playerModeBtn" id="btnsingle"
+                                autocomplete="off" onclick="enableDisableCheckBox()" required>
+                            <label class="btn btn-outline-primary" for="btnsingle">Single Player</label>
 
-                    <input type="radio" class="btn-check" name="playerModeBtn" value="multi" id="btnmulti"
-                        autocomplete="off" onclick="enableDisableCheckBox()">
-                    <label class="btn btn-outline-primary" for="btnmulti">MultiPlayer</label>
+                            <input type="radio" class="btn-check" name="playerModeBtn" value="multi" id="btnmulti"
+                                autocomplete="off" onclick="enableDisableCheckBox()">
+                            <label class="btn btn-outline-primary" for="btnmulti">MultiPlayer</label>
+                        </div>
+                    </div>
+                    <row class="row">
+
+                        <div class="btn-toolbar my-2 justify-content-evenly" role="toolbar"
+                            aria-label="Game mode group">
+                            <input type="radio" class="btn-check" value="standard" name="gameModeBtn" id="btnstandard"
+                                autocomplete="off" required>
+                            <label class="btn btn-outline-primary" for="btnstandard">Rock Paper Scissors</label>
+
+                            <input type="radio" class="btn-check" name="gameModeBtn" value="hard" id="btnhard"
+                                autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnhard">Hard (incl. Spock & Lizard)</label>
+
+                        </div>
+                    </row>
+                    <div class="row my-2">
+                        <div class="col">
+                            <label for="player-1-name-textbox">Player 1 Name:
+                                <input type="text" class="form-control" name="player1" id="player-1-name-textbox"
+                                    required>
+                            </label>
+                        </div>
+                        <div class="col">
+                            <label for="player-2-name-textbox">Player 2 Name:
+                                <input type="text" class="form-control" name="player2" id="player-2-name-textbox"
+                                    disabled required>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <input type="submit" class="btn btn-outline-success form-control mt-3" value="Submit"
+                            id="move-submit">
+                    </div>
 
 
-                </div>
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" value="standard" name="gameModeBtn" id="btnstandard"
-                        autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnstandard">Rock Paper Scissors</label>
+                </form>
+            </div>
 
-                    <input type="radio" class="btn-check" name="gameModeBtn" value="hard" id="btnhard"
-                        autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnhard">Hard (incl. Spock & Lizard)</label>
 
-                </div>
-                <label for="player-1-name-textbox">Player 1 Name:
-                    <input type="text" name="player1" id="player-1-name-textbox">
-                </label>
-                <label for="player-2-name-textbox">Player 1 Name:
-                    <input type="text" name="player2" id="player-2-name-textbox" disabled>
-                </label>
-
-                <input type="submit" value="Submit" id="move-submit">
-            </form>
             <!-- <a href="/singleplayer" id="single-player-link">Single Player</a>
             <a href="/multiplayer" id="multiplayer-link">Multiplayer</a> -->
 

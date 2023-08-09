@@ -2,15 +2,18 @@
 
     <body>
         <%- include('partials/header.ejs') %>
+            <div class="container-fluid text-center align-middle center">
 
-            <p>
-                <%= result %>
-            </p>
+                <h2>
+                    <%= result %>
+                </h2>
+                <div class="row">
+                    <a href="/game" class="btn btn-outline-dark">Another Game?</a>
+                    <a href="/" class="btn btn-outline-dark"> To Main Menu </a>
+                </div>
 
-            <a href="/game">Another Game?</a>
-            <a href="/">Exit to main menu</a>
 
 
-
+            </div>
             <%- include('partials/footer.ejs') %>
                 <%- include('partials/end.ejs') %>

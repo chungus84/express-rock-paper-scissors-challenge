@@ -2,29 +2,32 @@
 
     <body>
         <%- include('partials/header.ejs') %>
+            <div class="container-fluid text-center align-middle center">
 
-            <h1>Hi, <%= game.player1.name %>
-            </h1>
-            <h1>Select Rock Paper or Scissors</h1>
-            <% if(game.getSinglePlayer()===true) {%>
-                <form action="/results" method="post">
-                    <%} else {%>
-                        <form action="/multiplayergame" method="post">
-                            <% } %>
-                                <% moves.forEach(move=> {%>
-                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check" value="<%=move%>" name="radiobtn"
-                                            id="btn<%=move%>" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="btn<%=move%>">
-                                            <%=move%>
-                                        </label>
-                                        <% }) %>
+                <h2>Hi, <%= game.player1.name %>
+                </h2>
+                <h2>Select Your Move</h2>
+                <% if(game.getSinglePlayer()===true) {%>
+                    <form action="/results" method="post">
+                        <%} else {%>
+                            <form action="/multiplayergame" method="post">
+                                <% } %>
+                                    <div class="row">
+                                        <div class="btn-toolbar" role="toolbar" aria-label="move button group"></div>
+                                        <% moves.forEach(move=> {%>
+
+                                            <input type="radio" class="btn-check" value="<%=move%>" name="radiobtn"
+                                                id="btn<%=move%>" autocomplete="off" required>
+                                            <label class="btn btn-outline-secondary" for="btn<%=move%>">
+                                                <%=move%>
+                                            </label>
+                                            <% }) %>
                                     </div>
+                                    <div class="row">
+                                        <input type="submit" class="btn btn-outline-success form-control mt-3"
+                                            value="Submit" id="move-submit">
                                     </div>
-
-                                    <input type="submit" value="Submit" id="move-submit">
-
-                        </form>
-
-                        <%- include('partials/footer.ejs') %>
-                            <%- include('partials/end.ejs') %>
+                            </form>
+            </div>
+            <%- include('partials/footer.ejs') %>
+                <%- include('partials/end.ejs') %>

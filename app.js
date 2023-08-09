@@ -18,7 +18,7 @@ const port = process.env.PORT;
 console.log(port);
 app.set('view engine', 'ejs');
 
-
+app.use(express.static("public"))
 app.use(cors());
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
