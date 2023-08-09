@@ -1,8 +1,8 @@
-export const getHandMoves = (bool, handMoves) => {
-    if (bool) {
+export const getHandMoves = (hardMode, handMoves) => {
+    if (hardMode) {
         return handMoves;
     } else {
-        const { Spock, Lizard, ...possibleMoves } = handMoves;
+        const { spock, lizard, ...possibleMoves } = handMoves;
         return possibleMoves
     }
 }

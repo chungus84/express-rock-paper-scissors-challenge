@@ -24,4 +24,11 @@ describe('Testing request on the server', () => {
             // expect(res.body).to.have.property(`player1`);
         })
     })
+    describe('GET request for index', () => {
+        it('should render index', async () => {
+            const res = await testServer.get('/');
+
+            expect(res).to.have.status(200);
+        })
+    })
 })
