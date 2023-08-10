@@ -60,8 +60,8 @@ describe('Testing request on the server', () => {
             // console.log(req);
 
             const res = await chai.request(server).get('/results').send(req);
-            console.log(server.locals);
-            console.log(req);
+            // console.log(server.locals);
+            // console.log(req);
             expect(res).to.have.status(200);
 
         });
@@ -85,8 +85,9 @@ describe('Testing request on the server', () => {
             // console.log(req);
             const res = await chai.request(server).post('/results').send(req);
 
-            console.log(res);
+            // console.log(res);
             expect(res).to.have.status(200);
+            console.log(server.locals.game);
             expect(res.text).to.contain('Computer wins, paper beats rock')
         })
     });
@@ -109,9 +110,9 @@ describe('Testing request on the server', () => {
             // console.log(req);
             const res = await chai.request(server).post('/results').send(req);
 
-            console.log(res);
+            // console.log(res);
             expect(res).to.have.status(200);
-            expect(res.text).to.contain('Computer wins, paper beats rock')
+            expect(res.text).to.contain('Test2 wins, paper beats rock')
         })
     });
 
@@ -120,7 +121,7 @@ describe('Testing request on the server', () => {
         beforeEach(() => {
             const testGame = new Game()
             testGame.setHardMode('standard');
-            testGame.setSinglePLayer('single')
+            testGame.setSinglePLayer('multi')
             const testPlayer1 = { name: "Test1" }
             const testPlayer2 = { name: "Test2" }
             testGame.setPlayers(testPlayer1, testPlayer2);
@@ -133,10 +134,35 @@ describe('Testing request on the server', () => {
             }
 
 
-            const res = await chai.request(server).get('/multiplayer').send(req)
+            const res = await chai.request(server).get('/multiplayergame').send(req)
 
             // console.log(res);
             expect(res).to.have.status(200);
+            expect(res.text).to.contains('Hi, Test2')
+
+        })
+    })
+    describe('POST request for multiplayer route', () => {
+        beforeEach(() => {
+            const testGame = new Game()
+            testGame.setHardMode('standard');
+            testGame.setSinglePLayer('multi')
+            const testPlayer1 = { name: "Test1", setMove() { }, getMove() { return "rock" }, getName() { } }
+            const testPlayer2 = { name: "Test2" }
+            testGame.setPlayers(testPlayer1, testPlayer2);
+            server.locals.game = testGame;
+        })
+        it('should render multiplayer', async () => {
+
+            let req = {
+                body: { radiobtn: "paper" }
+            }
+
+
+            const res = await chai.request(server).post('/multiplayergame').send(req)
+
+            expect(res).to.have.status(200);
+            expect(res.text).to.contains('Hi, Test2')
 
         })
     })

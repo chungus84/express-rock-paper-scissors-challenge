@@ -3,7 +3,7 @@ import Game from '../src/game.js';
 import HumanPlayer from '../src/humanPlayer.js';
 import Computer from '../src/computer.js';
 import { handMove } from '../src/handMove.js';
-import { getHandMoves } from '../src/helpers.js';
+import { getHandMoves, setUpGame } from '../src/helpers.js';
 
 
 const router = express.Router();
@@ -11,9 +11,9 @@ const router = express.Router();
 router.post('/', (req, res) => {
     // console.log(req.body);
     // console.log(req.body);
-    const currentGame = new Game()
-    currentGame.setSinglePLayer(req.body.playerModeBtn)
-    currentGame.setHardMode(req.body.gameModeBtn)
+    const currentGame = setUpGame(new Game(), req.body.playerModeBtn, req.body.gameModeBtn)
+    // currentGame.setSinglePLayer(req.body.playerModeBtn)
+    // currentGame.setHardMode(req.body.gameModeBtn)
     const possibleMoves = getHandMoves(currentGame.getHardMode(), handMove);
     // console.log(possibleMoves);
 

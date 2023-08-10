@@ -6,3 +6,10 @@ export const getHandMoves = (hardMode, handMoves) => {
         return possibleMoves
     }
 }
+
+export const setUpGame = (game, playMode, gameMode) => {
+    const currentGame = game
+    currentGame.setSinglePLayer(playMode);
+    currentGame.setHardMode(gameMode);
+    return currentGame;
+}

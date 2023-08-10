@@ -1,7 +1,5 @@
 import express from 'express';
 import Computer from '../src/computer.js';
-import HumanPlayer from '../src/humanPlayer.js';
-
 
 const router = express.Router();
 
@@ -13,7 +11,7 @@ router.post('/', (req, res) => {
     // console.log(possibleMoves);
     // console.log(currentGame)
     currentGame.getSinglePlayer() ? currentGame.player1.setMove(req.body.radiobtn) : currentGame.player2.setMove(req.body.radiobtn)
-    if (currentGame.player2 instanceof Computer) { currentGame.player2.setMove(possibleMoves) }
+    if (currentGame.player2.name === "Computer") { currentGame.player2.setMove(possibleMoves) }
     console.log(currentGame);
     const result = currentGame.determineWinner();
     req.app.locals.result = result
