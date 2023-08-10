@@ -1,5 +1,19 @@
 # RPS Challenge
 
+### Installation Instructions
+```
+clone the repo
+run npm i to install the dependencies
+run npm tests to run the tests and the coverage (using c8)
+npm start to run dev environment
+npm run build
+
+```
+
+### Coverage Photo
+
+<img src="./public/css/coverage.png" alt="Coverage Report">
+
 Instructions
 -------
 
