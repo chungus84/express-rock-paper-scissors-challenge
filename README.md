@@ -7,6 +7,7 @@ run npm i to install the dependencies
 run npm tests to run the tests and the coverage (using c8)
 npm start to run dev environment
 npm run build
+deployed site on: https://rpspock.onrender.com/
 
 ```
 
