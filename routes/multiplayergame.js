@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
     // const player2 = req.app.locals.player2;
     // console.log(player1);
     // console.log(player2);
-    console.log(currentGame);
+    // console.log(currentGame);
 
     res.render('multiplayergame', {
         game: currentGame,

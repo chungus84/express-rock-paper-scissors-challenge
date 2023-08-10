@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
 
     const currentGame = req.app.locals.game
     const possibleMoves = req.app.locals.moves
-    console.log(possibleMoves);
+    // console.log(possibleMoves);
     // console.log(currentGame)
     currentGame.getSinglePlayer() ? currentGame.player1.setMove(req.body.radiobtn) : currentGame.player2.setMove(req.body.radiobtn)
     if (currentGame.player2 instanceof Computer) { currentGame.player2.setMove(possibleMoves) }

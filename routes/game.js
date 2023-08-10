@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
     // console.log(req.body);
-    console.log(req.body);
+    // console.log(req.body);
     const currentGame = new Game()
     currentGame.setSinglePLayer(req.body.playerModeBtn)
     currentGame.setHardMode(req.body.gameModeBtn)

@@ -36,4 +36,4 @@ const server = app.listen(port, () => {
 })
 
 
-export default server;
+export { app as server };
