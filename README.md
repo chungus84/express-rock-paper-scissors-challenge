@@ -91,9 +91,24 @@ In code review we'll be hoping to see:
 ### Extended Acceptance Criteria
 
 #### Multiplayer
+```
+| Object | Properties            | Messages                 | Returns  |
+| ------ | --------------------- | ------------------------ | -------- |
+| Game   | singlePlayer @boolean | setSinglePlayer(@string) | void     |
+|        |                       | getSinglePlayer()        | @boolean |
+
+```
+
+
 
 Change the game so that two DFAT members can play against each other ( _yes there are two of them and they'll be playing on the same computer_ ).
 
 #### Rock, Paper, Scissors, Spock, Lizard
 
+```
+| Object | Properties        | Messages             | Returns  |
+| ------ | ----------------- | -------------------- | -------- |
+| Game   | hardMode @boolean | setHardMode(@string) | void     |
+|        |                   | getHardMode()        | @boolean |
+```
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
