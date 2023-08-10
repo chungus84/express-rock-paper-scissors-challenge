@@ -1,6 +1,7 @@
 class Player {
-    #name
-    #move
+    #name;
+    #move;
+
     constructor(name) {
         this.name = name;
     }

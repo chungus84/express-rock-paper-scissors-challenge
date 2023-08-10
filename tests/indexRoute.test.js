@@ -5,17 +5,18 @@ import { server } from '../app.js';
 
 chai.use(chaiHttp);
 
-describe('Tests for index', async () => {
-    describe('GET test on index', () => {
-        it('should render index', async () => {
+describe(`Tests for index`, async () => {
+    describe(`GET test on index`, () => {
+        it(`should render index`, async () => {
             // Arrange
             // Act
             const res = await chai.request(server)
-                .get('/')
-                .send()
+                .get(`/`)
+                .send();
 
             // Assert
-            expect(res.text).to.contain(`Please select what mode you want to play`)
-        })
-    })
-})
+            expect(res).to.have.status(200);
+            expect(res.text).to.contain(`Please select what mode you want to play`);
+        });
+    });
+});

@@ -2,7 +2,7 @@ class Game {
     #player1;
     #player2;
     #singlePlayer;
-    #hardMode
+    #hardMode;
 
     static resultsHash = {
         "rock": ["scissors", "lizard"],
@@ -10,11 +10,11 @@ class Game {
         "scissors": ["paper", "lizard"],
         "spock": ["rock", "scissors"],
         "lizard": ["paper", "spock"],
-    }
+    };
 
     setPlayers(player1, player2) {
         this.player1 = player1;
-        this.player2 = player2
+        this.player2 = player2;
     }
 
 
@@ -36,7 +36,6 @@ class Game {
 
 
     determineWinner() {
-        console.log(this.player2.getMove());
         if (Game.resultsHash[this.player1.getMove()].includes(this.player2.getMove())) {
             return `${this.player1.getName()} wins, ${this.player1.getMove()} beats ${this.player2.getMove()}`;
         }

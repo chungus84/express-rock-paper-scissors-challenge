@@ -3,12 +3,12 @@ export const getHandMoves = (hardMode, handMoves) => {
         return handMoves;
     } else {
         const { spock, lizard, ...possibleMoves } = handMoves;
-        return possibleMoves
+        return possibleMoves;
     }
 }
 
 export const setUpGame = (game, playMode, gameMode) => {
-    const currentGame = game
+    const currentGame = game;
     currentGame.setSinglePLayer(playMode);
     currentGame.setHardMode(gameMode);
     return currentGame;

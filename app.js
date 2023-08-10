@@ -29,7 +29,7 @@ app.use('/multiplayergame', multiplayerGame)
 
 
 
-const server = app.listen(port, () => {
+const server = app.listen(port, host, () => {
     const SERVERHOST = server.address().address;
     const SERVERPORT = server.address().port;
     console.log(`Server is listening at http://${SERVERHOST}:${SERVERPORT}`);

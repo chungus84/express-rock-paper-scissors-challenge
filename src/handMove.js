@@ -5,7 +5,3 @@ export const handMove = Object.freeze({
     lizard: 'lizard',
     spock: 'spock'
 });
-
-// const { Lizard, Spock, ...simpleHands } = handMove;
-
-// console.log(simpleHands);
